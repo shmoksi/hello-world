@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node app.js"
   },
+  "main": "app.js",
   "dependencies": {
     "body-parser": "^1.15.1",
     "config-chain": "^1.1.10",

@@ -24,13 +24,11 @@ var routes = require('./routes/index');
 
 var app = express();
 
-app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 8080);
-app.set('ip', process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1');
-// var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
-// var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 
-server.listen(app.get('port'), app.get('ip'), function () {
-  console.log( "Listening on " + app.get('ip') + ", server_port " + app.get('port') )
+server.listen(server_port, server_ip_address, function () {
+  console.log( "Listening on " + server_ip_address + ", server_port " + port )
 });
 
 // view engine setup
