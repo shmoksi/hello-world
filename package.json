@@ -1,18 +1,13 @@
 {
-  "name": "crud",
-  "version": "1.0.0",
+  "name": "helloWorld",
+  "version": "0.0.0",
   "private": true,
+  "dependencies": {
+    "ejs": "^2.4.1",
+    "express": "~4.13.1"
+  },
   "scripts": {
     "start": "node app.js"
   },
-  "main": "app.js",
-  "dependencies": {
-    "body-parser": "^1.15.1",
-    "config-chain": "^1.1.10",
-    "express": "^4.13.4",
-    "jade": "^1.11.0",
-    "jsonfile": "^2.3.1",
-    "mongodb": "^1.4.40",
-    "mongoose": "^4.4.19"
-  }
+  "main": "app.js"
 }
