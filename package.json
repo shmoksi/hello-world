@@ -10,7 +10,18 @@
     "serve-favicon": "^2.3.0"
   },
   "scripts": {
+    "clean": "gulp clean",
+    "build": "gulp",
     "start": "node app.js"
   },
-  "main": "app.js"
+  "main": "app.js",
+  "devDependencies": {
+    "del": "^2.2.1",
+    "gulp": "^3.9.1",
+    "gulp-angular-templatecache": "^2.0.0",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-inject": "^4.1.0",
+    "gulp-rename": "^1.2.2"
+  }
 }
