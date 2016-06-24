@@ -1,8 +1,6 @@
-var http = require('http');
 var express = require('express');
 var path = require('path');
-
-var fs = require('fs');
+var http = require('http');
 
 var app = express();
 
@@ -13,14 +11,7 @@ http.createServer(app).listen(app.get('port'), app.get('ip'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
 
-app.engine('html', require('ejs').renderFile);
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'html');
+app.use('/public', express.static(path.join(__dirname, '/public')));
+app.use('/*', express.static(path.join(__dirname, '/public')));
 
-app.get('/', function(req, res, next) {
-	fs.readFile('db/hello.txt', function(err, data){
-		res.render('index', {
-			text: data.toString()
-		});
-	});
-});
+module.exports = app;

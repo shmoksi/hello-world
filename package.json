@@ -4,7 +4,8 @@
   "private": true,
   "dependencies": {
     "ejs": "^2.4.1",
-    "express": "~4.13.1"
+    "express": "~4.13.1",
+    "serve-favicon": "^2.3.0"
   },
   "scripts": {
     "start": "node app.js"
