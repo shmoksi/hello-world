@@ -10,9 +10,9 @@ var app = express();
 // app.set('ip', process.env.IP || '127.0.0.1');
 
 var port = process.env.PORT || 8080;
-// var ip = process.env.IP || '127.0.0.1';
+var ip = process.env.IP || '127.0.0.1';
 
-http.createServer(app).listen(port, function(){
+http.createServer(app).listen(port, ip, function(){
   console.log('Express server listening on port ' + port);
 });
 
