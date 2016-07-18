@@ -1,20 +1,25 @@
 var express = require('express');
 var router = express.Router();
-var titlesCollection = require('./controller');
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
+var title = new Schema({
+    title: {type: String}
+});
+
+modelTitle = mongoose.model('Title', title);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    var newTitle = new titlesCollection();
+    var newTitle = new modelTitle();
     newTitle.title = 'Oksi';
 
-    titlesCollection.createTitle(newTitle, function (err, user) {
+    newTitle.save(function (err, user) {
         if (err) {
-            console.log(err);
-        } else {
-            console.log(user);
-            res.render('index', { title: user.title });
+            return console.log(err);
         }
+        res.render('index', { title: user.title });
+
     });
 });
 
