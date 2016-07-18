@@ -6,11 +6,14 @@ var fs = require('fs');
 
 var app = express();
 
-app.set('port', process.env.PORT || 8080);
-app.set('ip', process.env.IP || '127.0.0.1');
+// app.set('port', process.env.PORT || 8080);
+// app.set('ip', process.env.IP || '127.0.0.1');
 
-http.createServer(app).listen(app.get('port'), app.get('ip'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+var port = process.env.PORT || 8080;
+// var ip = process.env.IP || '127.0.0.1';
+
+http.createServer(app).listen(port, function(){
+  console.log('Express server listening on port ' + port);
 });
 
 app.engine('html', require('ejs').renderFile);
