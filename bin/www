@@ -9,7 +9,7 @@ var debug = require('debug')('twomore:server');
 var http = require('http');
 var mongoose = require('mongoose');
 
-var connection_string = process.env.MONGOLAB_URI || 'mongodb://127.0.0.1:27017/hello';
+var connection_string = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/hello';
 mongoose.connect(connection_string, function(err, res) {
     if (err) {
       console.log ('ERROR connecting to: ' + connection_string + '. ' + err);
