@@ -1,6 +1,8 @@
 language: node_js
 node_js:
 - '5'
+before_deploy:
+- gulp sass
 deploy:
   app: testhellow
   provider: heroku
